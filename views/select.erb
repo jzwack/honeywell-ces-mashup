@@ -1,0 +1,35 @@
+<form method="post" action="/optimize">
+<p>
+    Power Station Name
+    <select name="facility" title="Power Station Name">
+        <% @facility_results.each do |i|%>
+            <option value="<%= i.facility_name %>" title="Power Station Name"><%= i.facility_name %></option>
+        <% end %>
+    </select>
+</p>
+<p>
+    Select a date!
+    <select name="date" title="Select a Date">
+        <% @date_results.each do |i|%>
+            <option value="<%= i.date %>" title="Select a Date"><%= i.date %></option>
+        <% end %>
+    </select>
+</p>
+<p>
+    Thermostat Name
+    <select name="device" title="Thermostat Name">
+        <% @devices.each do |i| %>
+            <option value="<%= i['deviceID'] %>" title="Thermostat Name"><%= i['userDefinedDeviceName'] %></option>
+        <% end %>
+    </select>
+</p>
+<p>
+    Thermostat Location
+    <select name="location" title="Thermostat Location">
+        <% @locations_data.each do |i| %>
+            <option value="<%= i['locationID'] %>" title="Thermostat Location"><%= i['name'] %></option>
+        <% end %>
+    </select>
+</p>
+    <button type="submit">Submit</button>
+</form>
